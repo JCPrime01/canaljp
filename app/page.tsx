@@ -26,14 +26,29 @@ function WhatsAppIcon() {
 
 function FootballDecor() {
   return (
-    <img
-      className="football-cluster"
-      src="/football-elements.png"
-      alt=""
-      width="1254"
-      height="1254"
-      aria-hidden="true"
-    />
+    <div className="football-row" aria-hidden="true">
+      <img
+        className="football-ball football-ball-left"
+        src="/football-single.png"
+        alt=""
+        width="1254"
+        height="1254"
+      />
+      <img
+        className="football-ball football-ball-center"
+        src="/football-single.png"
+        alt=""
+        width="1254"
+        height="1254"
+      />
+      <img
+        className="football-ball football-ball-right"
+        src="/football-single.png"
+        alt=""
+        width="1254"
+        height="1254"
+      />
+    </div>
   );
 }
 

@@ -121,7 +121,67 @@
     linear-gradient(180deg, rgb(1 13 7 / 18%), rgb(1 13 7 / 55%));
 }
 
+.decor-ball {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+  filter: drop-shadow(0 14px 18px rgb(0 0 0 / 42%));
+}
+
+.decor-ball img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  height: auto;
+}
+
+.decor-ball-left {
+  top: 22%;
+  left: clamp(-4.2rem, -4vw, -2rem);
+  width: clamp(8.5rem, 15vw, 13rem);
+  aspect-ratio: 1;
+  transform: rotate(-10deg);
+}
+
+.decor-ball-left img {
+  top: 0;
+  left: 0;
+  width: 200%;
+}
+
+.decor-ball-top-right {
+  top: 9%;
+  right: clamp(-1.5rem, 0vw, 1.5rem);
+  width: clamp(5rem, 9vw, 8rem);
+  aspect-ratio: 1;
+  transform: rotate(9deg);
+}
+
+.decor-ball-top-right img {
+  top: -8%;
+  left: -275%;
+  width: 400%;
+}
+
+.decor-ball-bottom-right {
+  right: clamp(-5rem, -4vw, -2.25rem);
+  bottom: 17%;
+  width: clamp(10rem, 19vw, 17rem);
+  aspect-ratio: 1;
+  transform: rotate(8deg);
+}
+
+.decor-ball-bottom-right img {
+  top: -46%;
+  left: -46%;
+  width: 150%;
+}
+
 .hero-content {
+  position: relative;
+  z-index: 1;
   width: min(100%, 720px);
   margin: auto;
   padding: clamp(2.5rem, 8vh, 5.5rem) 1.25rem 2rem;
@@ -138,29 +198,12 @@
   width: 100%;
 }
 
-.comic-kicker {
-  position: absolute;
-  z-index: -1;
-  top: -1.35rem;
-  left: 50%;
-  display: grid;
-  width: 3.2rem;
-  height: 3.2rem;
-  place-items: center;
-  border: 3px solid #07140d;
-  border-radius: 999px;
-  background: #dcff39;
-  box-shadow: 5px 5px 0 #07140d;
-  font-size: 1.45rem;
-  transform: translateX(-50%) rotate(-7deg);
-}
-
 .hero-title {
   margin: 0;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: clamp(4.2rem, 18vw, 8.4rem);
+  font-size: clamp(5.3rem, 22vw, 10.8rem);
   font-weight: 900;
-  line-height: 0.73;
+  line-height: 0.78;
   letter-spacing: -0.035em;
   text-transform: uppercase;
   transform: rotate(-1deg);
@@ -176,7 +219,7 @@
 }
 
 .hero-title .hero-title-accent {
-  margin-top: 0.22em;
+  margin-top: 0.32em;
   color: #ffd322;
   text-shadow:
     0 5px 0 #07140d,
@@ -302,11 +345,11 @@
   transition: opacity 160ms ease, transform 160ms ease, color 160ms ease;
 }
 
-.secondary-cta svg {
-  width: 1.1rem;
-  height: 1.1rem;
-  color: #37e47e;
-  fill: rgb(55 228 126 / 20%);
+.secondary-cta .whatsapp-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #25d366;
+  fill: currentColor;
 }
 
 .secondary-cta:hover {
@@ -404,7 +447,7 @@
   }
 
   .hero-title {
-    font-size: clamp(3.7rem, 15vw, 6.4rem);
+    font-size: clamp(4.55rem, 19vw, 7.5rem);
   }
 
   .hero-subtitle {

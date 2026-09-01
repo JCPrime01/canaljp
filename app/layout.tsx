@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    'https://acesso-liberado-futebol.producaojcprime.chatgpt.site',
+  ),
   title: 'Acesso Liberado',
   description:
     'Entre no grupo gratuito e receba análises de futebol todos os dias.',

@@ -121,87 +121,45 @@
     linear-gradient(180deg, rgb(1 13 7 / 18%), rgb(1 13 7 / 55%));
 }
 
-.decor-ball {
+.football-cluster {
   position: absolute;
   z-index: -1;
+  top: clamp(0.75rem, 3vh, 2rem);
+  right: clamp(0.75rem, 3vw, 2.5rem);
   display: block;
-  overflow: hidden;
+  width: clamp(7.25rem, 14vw, 11rem);
+  height: auto;
+  opacity: 0.86;
   pointer-events: none;
   filter: drop-shadow(0 14px 18px rgb(0 0 0 / 42%));
-}
-
-.decor-ball img {
-  position: absolute;
-  display: block;
-  max-width: none;
-  height: auto;
-}
-
-.decor-ball-left {
-  top: 22%;
-  left: clamp(-2.8rem, -2.5vw, -1.25rem);
-  width: clamp(6.5rem, 11vw, 9.5rem);
-  aspect-ratio: 1;
-  transform: rotate(-10deg);
-}
-
-.decor-ball-left img {
-  top: 0;
-  left: 0;
-  width: 200%;
-}
-
-.decor-ball-top-right {
-  top: 9%;
-  right: clamp(-0.5rem, 1.5vw, 2.5rem);
-  width: clamp(4.25rem, 7vw, 6.5rem);
-  aspect-ratio: 1;
-  transform: rotate(9deg);
-}
-
-.decor-ball-top-right img {
-  top: -8%;
-  left: -250%;
-  width: 360%;
-}
-
-.decor-ball-bottom-right {
-  right: clamp(-3rem, -2vw, -1rem);
-  bottom: 17%;
-  width: clamp(7.5rem, 14vw, 12rem);
-  aspect-ratio: 1;
-  transform: rotate(8deg);
-}
-
-.decor-ball-bottom-right img {
-  top: -48%;
-  left: -48%;
-  width: 150%;
+  animation: football-drift 6.5s ease-in-out infinite;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
   width: min(100%, 720px);
-  margin: auto;
-  padding: clamp(2.5rem, 8vh, 5.5rem) 1.25rem 2rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vh, 5rem) 1.25rem clamp(1.5rem, 3vh, 2.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: clamp(1.25rem, 3vh, 2rem);
+  justify-content: space-between;
+  gap: clamp(3rem, 8vh, 6rem);
   text-align: center;
 }
 
 .headline-wrap {
   position: relative;
   width: 100%;
+  animation: headline-float 4.8s ease-in-out infinite;
 }
 
 .hero-title {
   margin: 0;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: clamp(5.3rem, 22vw, 10.8rem);
+  font-size: clamp(5.65rem, 23vw, 11.4rem);
   font-weight: 900;
   line-height: 0.78;
   letter-spacing: -0.035em;
@@ -245,6 +203,14 @@
 
 .hero-subtitle strong {
   color: #dcff39;
+}
+
+.details-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.2rem, 2.5vh, 1.8rem);
 }
 
 .cta-stack {
@@ -430,6 +396,26 @@
   }
 }
 
+@keyframes headline-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-7px) scale(1.012);
+  }
+}
+
+@keyframes football-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-3deg);
+  }
+  50% {
+    transform: translate3d(-8px, 9px, 0) rotate(4deg);
+  }
+}
+
 @media (min-width: 760px) {
   .hero-content {
     padding-inline: 2rem;
@@ -442,12 +428,13 @@
 
 @media (max-height: 700px) {
   .hero-content {
-    gap: 0.9rem;
-    padding-top: 2rem;
+    gap: 1.5rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.25rem;
   }
 
   .hero-title {
-    font-size: clamp(4.55rem, 19vw, 7.5rem);
+    font-size: clamp(4.9rem, 20vw, 8rem);
   }
 
   .hero-subtitle {

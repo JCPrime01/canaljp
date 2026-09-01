@@ -24,11 +24,16 @@ function WhatsAppIcon() {
   );
 }
 
-function FootballDecor({ className }: { className: string }) {
+function FootballDecor() {
   return (
-    <span className={`decor-ball ${className}`} aria-hidden="true">
-      <img src="/football-elements.png" alt="" width="1254" height="1254" />
-    </span>
+    <img
+      className="football-cluster"
+      src="/football-elements.png"
+      alt=""
+      width="1254"
+      height="1254"
+      aria-hidden="true"
+    />
   );
 }
 
@@ -37,9 +42,7 @@ export default function Home() {
     <main className="hero-shell">
       <div className="pitch-art" aria-hidden="true" />
       <div className="hero-vignette" aria-hidden="true" />
-      <FootballDecor className="decor-ball-left" />
-      <FootballDecor className="decor-ball-top-right" />
-      <FootballDecor className="decor-ball-bottom-right" />
+      <FootballDecor />
 
       <section className="hero-content" aria-labelledby="hero-title">
         <div className="headline-wrap">
@@ -49,38 +52,40 @@ export default function Home() {
           </h1>
         </div>
 
-        <p className="hero-subtitle">
-          Entre no meu <strong>grupo gratuito</strong> onde libero minhas análise
-          todos os dias.
-        </p>
-
-        <div className="cta-stack">
-          <a
-            href={links.telegram}
-            className={cn(buttonVariants(), 'primary-cta')}
-            aria-label="Quero entrar agora"
-          >
-            <span className="cta-icon" aria-hidden="true">
-              <Send />
-            </span>
-            <span>Quero entrar agora</span>
-            <ChevronsRight className="cta-arrow" aria-hidden="true" />
-          </a>
-
-          <p className="legal-note">
-            Ao clicar no botão você concorda com nossos{' '}
-            <a href={links.terms}>Termos</a> e{' '}
-            <a href={links.privacy}>Políticas</a>
+        <div className="details-stack">
+          <p className="hero-subtitle">
+            Entre no meu <strong>grupo gratuito</strong> onde libero minhas análise
+            todos os dias.
           </p>
 
-          <a
-            href={links.whatsapp}
-            className="secondary-cta"
-            aria-label="Clique aqui se você não tiver Telegram"
-          >
-            <WhatsAppIcon />
-            <span>Clique aqui se você não tiver Telegram</span>
-          </a>
+          <div className="cta-stack">
+            <a
+              href={links.telegram}
+              className={cn(buttonVariants(), 'primary-cta')}
+              aria-label="Quero entrar agora"
+            >
+              <span className="cta-icon" aria-hidden="true">
+                <Send />
+              </span>
+              <span>Quero entrar agora</span>
+              <ChevronsRight className="cta-arrow" aria-hidden="true" />
+            </a>
+
+            <p className="legal-note">
+              Ao clicar no botão você concorda com nossos{' '}
+              <a href={links.terms}>Termos</a> e{' '}
+              <a href={links.privacy}>Políticas</a>
+            </p>
+
+            <a
+              href={links.whatsapp}
+              className="secondary-cta"
+              aria-label="Clique aqui se você não tiver Telegram"
+            >
+              <WhatsAppIcon />
+              <span>Clique aqui se você não tiver Telegram</span>
+            </a>
+          </div>
         </div>
       </section>
 

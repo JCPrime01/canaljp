@@ -306,13 +306,6 @@
   fill: currentColor;
 }
 
-.cta-arrow {
-  width: clamp(1.35rem, 4vw, 1.8rem);
-  height: auto;
-  stroke-width: 3.5;
-  animation: arrow-nudge 1.2s ease-in-out infinite;
-}
-
 .legal-note {
   margin: 0.75rem 0 0;
   color: rgb(255 255 255 / 78%);
@@ -415,16 +408,6 @@
   }
 }
 
-@keyframes arrow-nudge {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(4px);
-  }
-}
-
 @keyframes headline-float {
   0%,
   100% {
@@ -465,6 +448,19 @@
 
   .hero-subtitle {
     font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 759px) {
+  .headline-wrap {
+    width: 100vw;
+    margin-top: clamp(5.25rem, 14vh, 7.5rem);
+    margin-inline: calc(50% - 50vw);
+    translate: 0 clamp(1.25rem, 3.5vh, 2.5rem);
+  }
+
+  .hero-title {
+    transform: none;
   }
 }
 

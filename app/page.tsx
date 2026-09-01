@@ -1,4 +1,4 @@
-import { ChevronsRight, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -84,13 +84,12 @@ export default function Home() {
             <a
               href={links.telegram}
               className={cn(buttonVariants(), 'primary-cta')}
-              aria-label="Quero entrar agora"
+              aria-label="Entrar no grupo"
             >
               <span className="cta-icon" aria-hidden="true">
                 <Send />
               </span>
-              <span>Quero entrar agora</span>
-              <ChevronsRight className="cta-arrow" aria-hidden="true" />
+              <span>Entrar no grupo</span>
             </a>
 
             <p className="legal-note">

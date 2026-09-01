@@ -70,11 +70,19 @@
 
   html {
     min-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     background: var(--background);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
     min-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     margin: 0;
     background: var(--background);
     color: var(--foreground);
@@ -90,8 +98,11 @@
 .hero-shell {
   position: relative;
   isolation: isolate;
+  width: 100%;
+  max-width: 100vw;
   min-height: 100svh;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   display: grid;
   grid-template-rows: 1fr auto;
   color: #fffdf1;
@@ -452,15 +463,96 @@
 }
 
 @media (max-width: 759px) {
+  .football-row {
+    width: calc(100% - 2rem);
+  }
+
+  .football-ball {
+    width: clamp(2.7rem, 12vw, 3.15rem);
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+
   .headline-wrap {
-    width: 100vw;
+    width: 100%;
     margin-top: clamp(5.25rem, 14vh, 7.5rem);
-    margin-inline: calc(50% - 50vw);
+    margin-inline: 0;
     translate: 0 clamp(1.25rem, 3.5vh, 2.5rem);
   }
 
   .hero-title {
+    width: 100%;
+    font-size: clamp(4.75rem, 20.5vw, 5.65rem);
     transform: none;
+  }
+
+  .details-stack,
+  .cta-stack,
+  .hero-subtitle {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-subtitle {
+    padding: 0.7rem 0.75rem;
+    font-size: clamp(0.78rem, 3.25vw, 0.92rem);
+    overflow-wrap: anywhere;
+  }
+
+  .primary-cta {
+    width: calc(100% - 0.6rem);
+    max-width: calc(100% - 0.6rem);
+    height: clamp(3.6rem, 15vw, 4.1rem);
+    margin-inline: auto;
+    padding-inline: 0.7rem;
+    gap: 0.65rem;
+    font-size: clamp(0.92rem, 4vw, 1.08rem);
+    letter-spacing: 0.02em;
+  }
+
+  .cta-icon {
+    width: clamp(2.2rem, 10vw, 2.65rem);
+    height: clamp(2.2rem, 10vw, 2.65rem);
+  }
+
+  .legal-note {
+    width: 100%;
+    padding-inline: 0.25rem;
+    overflow-wrap: anywhere;
+  }
+
+  .secondary-cta {
+    max-width: 100%;
+    padding-inline: 0.25rem;
+    font-size: clamp(0.64rem, 2.65vw, 0.76rem);
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .secondary-cta span {
+    min-width: 0;
+  }
+
+  .site-footer {
+    max-width: 100%;
+    padding-right: max(0.85rem, env(safe-area-inset-right));
+    padding-left: max(0.85rem, env(safe-area-inset-left));
+  }
+
+  .site-footer p,
+  .site-footer nav {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .site-footer nav {
+    flex-wrap: wrap;
   }
 }
 

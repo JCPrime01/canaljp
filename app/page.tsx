@@ -50,8 +50,8 @@ export default function Home() {
         </div>
 
         <p className="hero-subtitle">
-          Entre no meu <strong>grupo gratuito</strong> que vou liberar as minhas
-          análises todos os dias
+          Entre no meu <strong>grupo gratuito</strong> onde libero minhas análise
+          todos os dias.
         </p>
 
         <div className="cta-stack">

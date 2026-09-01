@@ -139,8 +139,8 @@
 
 .decor-ball-left {
   top: 22%;
-  left: clamp(-4.2rem, -4vw, -2rem);
-  width: clamp(8.5rem, 15vw, 13rem);
+  left: clamp(-2.8rem, -2.5vw, -1.25rem);
+  width: clamp(6.5rem, 11vw, 9.5rem);
   aspect-ratio: 1;
   transform: rotate(-10deg);
 }
@@ -153,29 +153,29 @@
 
 .decor-ball-top-right {
   top: 9%;
-  right: clamp(-1.5rem, 0vw, 1.5rem);
-  width: clamp(5rem, 9vw, 8rem);
+  right: clamp(-0.5rem, 1.5vw, 2.5rem);
+  width: clamp(4.25rem, 7vw, 6.5rem);
   aspect-ratio: 1;
   transform: rotate(9deg);
 }
 
 .decor-ball-top-right img {
   top: -8%;
-  left: -275%;
-  width: 400%;
+  left: -250%;
+  width: 360%;
 }
 
 .decor-ball-bottom-right {
-  right: clamp(-5rem, -4vw, -2.25rem);
+  right: clamp(-3rem, -2vw, -1rem);
   bottom: 17%;
-  width: clamp(10rem, 19vw, 17rem);
+  width: clamp(7.5rem, 14vw, 12rem);
   aspect-ratio: 1;
   transform: rotate(8deg);
 }
 
 .decor-ball-bottom-right img {
-  top: -46%;
-  left: -46%;
+  top: -48%;
+  left: -48%;
   width: 150%;
 }
 

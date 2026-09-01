@@ -28,21 +28,28 @@ function FootballDecor() {
   return (
     <div className="football-row" aria-hidden="true">
       <img
-        className="football-ball football-ball-left"
+        className="football-ball football-ball-one"
         src="/football-single.png"
         alt=""
         width="1254"
         height="1254"
       />
       <img
-        className="football-ball football-ball-center"
+        className="football-ball football-ball-two"
         src="/football-single.png"
         alt=""
         width="1254"
         height="1254"
       />
       <img
-        className="football-ball football-ball-right"
+        className="football-ball football-ball-three"
+        src="/football-single.png"
+        alt=""
+        width="1254"
+        height="1254"
+      />
+      <img
+        className="football-ball football-ball-four"
         src="/football-single.png"
         alt=""
         width="1254"

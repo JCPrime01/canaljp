@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "alias": ["comunidadejc-es.vercel.app"],
   "framework": null,
   "buildCommand": "npm run build:vercel",
   "outputDirectory": "dist-vercel"

@@ -103,7 +103,7 @@ export default function Home() {
           pelo Facebook de nenhuma maneira. FACEBOOK é uma marca comercial
           independente da FACEBOOK, Inc.
         </p>
-        <p>Todos os direitos reservados © 2026</p>
+        <p>Comunidade do Jota © 2026 — Todos os direitos reservados</p>
         <nav aria-label="Links legais">
           <a href={links.terms}>Termos de Uso</a>
           <span aria-hidden="true">|</span>

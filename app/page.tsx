@@ -167,6 +167,15 @@ export default function Home() {
           <a href={CONTENT.privacy}>Política de Privacidade</a>
         </nav>
       </footer>
+
+      <div className="selo-legal-bar" aria-label="Aviso legal Ministério da Fazenda">
+        <img
+          src="/selo-legal.png"
+          alt="Ministério da Fazenda adverte: Aposta não é investimento. Jogue com responsabilidade. Autorização SPA/MF nº 320/2025"
+          width="1920"
+          height="108"
+        />
+      </div>
     </main>
   );
 }

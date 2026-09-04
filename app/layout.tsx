@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   ),
   title: 'Acesso Liberado',
   description:
-    'Entre no grupo gratuito e receba análises de futebol todos os dias.',
+    'Entre na comunidade gratuita e receba análises de futebol todos os dias.',
   openGraph: {
     title: 'Acesso Liberado',
     description:
-      'Entre no grupo gratuito e receba análises de futebol todos os dias.',
+      'Entre na comunidade gratuita e receba análises de futebol todos os dias.',
     images: [
       {
         url: '/og.png',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Acesso Liberado',
     description:
-      'Entre no grupo gratuito e receba análises de futebol todos os dias.',
+      'Entre na comunidade gratuita e receba análises de futebol todos os dias.',
     images: ['/og.png'],
   },
 };

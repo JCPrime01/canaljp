@@ -328,38 +328,6 @@
   color: #dcff39;
 }
 
-.secondary-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.15rem;
-  color: #ffffff;
-  font-size: clamp(0.68rem, 2.7vw, 0.82rem);
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  text-decoration: underline;
-  opacity: 0.88;
-  transition: opacity 160ms ease, transform 160ms ease, color 160ms ease;
-}
-
-.secondary-cta .whatsapp-icon {
-  width: 1.2rem;
-  height: 1.2rem;
-  color: #25d366;
-  fill: currentColor;
-}
-
-.secondary-cta:hover {
-  color: #dcff39;
-  opacity: 1;
-}
-
-.secondary-cta:active {
-  transform: scale(0.97);
-}
-
 .site-footer {
   width: 100%;
   padding: 0.8rem 1rem max(0.8rem, env(safe-area-inset-bottom));
@@ -525,18 +493,6 @@
     width: 100%;
     padding-inline: 0.25rem;
     overflow-wrap: anywhere;
-  }
-
-  .secondary-cta {
-    max-width: 100%;
-    padding-inline: 0.25rem;
-    font-size: clamp(0.64rem, 2.65vw, 0.76rem);
-    line-height: 1.25;
-    white-space: normal;
-  }
-
-  .secondary-cta span {
-    min-width: 0;
   }
 
   .site-footer {

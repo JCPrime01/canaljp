@@ -153,29 +153,19 @@ export default function Home() {
       </section>
 
       <footer className="site-footer">
-        <p className="responsibility">🔞 Jogue com Responsabilidade</p>
-        <p className="disclaimer">
-          Este site não é do Facebook. Este site não faz parte do site do
-          Facebook ou do Facebook Inc. Além disso, este site NÃO é endossado
-          pelo Facebook de nenhuma maneira. FACEBOOK é uma marca comercial
-          independente da FACEBOOK, Inc.
-        </p>
-        <p>Todos os direitos reservados © 2026</p>
+        <img
+          className="selo-legal-footer"
+          src="/selo-legal-footer.png"
+          alt="Ministério da Fazenda adverte: Aposta não é investimento. Jogue com responsabilidade. Autorização SPA/MF nº 320/2025"
+          width="900"
+          height="200"
+        />
         <nav aria-label="Links legais">
           <a href={CONTENT.terms}>Termos de Uso</a>
           <span aria-hidden="true">|</span>
           <a href={CONTENT.privacy}>Política de Privacidade</a>
         </nav>
       </footer>
-
-      <div className="selo-legal-bar" aria-label="Aviso legal Ministério da Fazenda">
-        <img
-          src="/selo-legal.png"
-          alt="Ministério da Fazenda adverte: Aposta não é investimento. Jogue com responsabilidade. Autorização SPA/MF nº 320/2025"
-          width="1920"
-          height="108"
-        />
-      </div>
     </main>
   );
 }

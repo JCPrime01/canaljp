@@ -16,5 +16,7 @@ export default defineConfig({
   build: {
     outDir: '../dist-vercel',
     emptyOutDir: true,
+    target: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari14'],
+    cssTarget: ['chrome87', 'safari14', 'firefox78', 'edge88'],
   },
 });

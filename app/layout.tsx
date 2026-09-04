@@ -5,19 +5,19 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     'https://comunidadejc-es.vercel.app',
   ),
-  title: 'Acesso Liberado',
+  title: 'COMUNIDADE DO JOTA',
   description:
     'Entre na comunidade gratuita e receba análises de futebol todos os dias.',
   openGraph: {
-    title: 'Acesso Liberado',
+    title: 'COMUNIDADE DO JOTA',
     description:
       'Entre na comunidade gratuita e receba análises de futebol todos os dias.',
     images: [
       {
-        url: '/og.png',
+        url: '/og-comunidade-do-jota.png',
         width: 1200,
         height: 630,
-        alt: 'Acesso Liberado — análises todos os dias',
+        alt: 'COMUNIDADE DO JOTA — análises todos os dias',
       },
     ],
     locale: 'pt_BR',
@@ -25,10 +25,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Acesso Liberado',
+    title: 'COMUNIDADE DO JOTA',
     description:
       'Entre na comunidade gratuita e receba análises de futebol todos os dias.',
-    images: ['/og.png'],
+    images: ['/og-comunidade-do-jota.png'],
+  },
+  icons: {
+    icon: '/favicon-jc.svg',
+    shortcut: '/favicon-jc.svg',
+    apple: '/favicon-jc.svg',
   },
 };
 

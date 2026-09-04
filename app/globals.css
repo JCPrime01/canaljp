@@ -521,23 +521,11 @@
   }
 }
 
-/* ── Selo Legal MF ── */
-.selo-legal-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+/* ── Selo Legal Footer ── */
+.selo-legal-footer {
   width: 100%;
-  z-index: 100;
-  line-height: 0;
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-
-.selo-legal-bar img {
-  width: 100%;
+  max-width: 480px;
   height: auto;
   display: block;
-}
-
-.hero-shell {
-  padding-bottom: 6rem;
+  margin-inline: auto;
 }

@@ -46,7 +46,7 @@
     <script>
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '806613525559509');
-      fbq('track', 'PageView');
+      fbq('track', 'PageViewJC');
 
       (function () {
         var orig = window.fbq;
@@ -74,21 +74,21 @@
       })();
 
       function dispararLead() {
-        var eventId = 'Search' + Date.now();
+        var eventId = 'CliqueJC' + Date.now();
         var params = new URLSearchParams(window.location.search);
         var utms = {};
         ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','campaign','fbclid','gclid','cid','account_id','bot'].forEach(function (k) {
           var v = params.get(k);
           if (v) utms[k] = v;
         });
-        try { fbq('track', 'Search', utms, { eventID: eventId }); } catch (e) {}
+        try { fbq('track', 'CliqueJC', utms, { eventID: eventId }); } catch (e) {}
         window._lastLeadEventId = eventId;
         return eventId;
       }
     </script>
   </head>
   <body>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=806613525559509&ev=PageView&noscript=1" alt="" /></noscript>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=806613525559509&ev=PageViewJC&noscript=1" alt="" /></noscript>
     <div id="root"></div>
     <script type="module" src="/main.tsx"></script>
   </body>

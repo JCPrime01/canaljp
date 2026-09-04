@@ -520,3 +520,24 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ── Selo Legal MF ── */
+.selo-legal-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  line-height: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.selo-legal-bar img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-shell {
+  padding-bottom: 6rem;
+}

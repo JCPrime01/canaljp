@@ -2,8 +2,8 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const links = {
-  telegram:
-    'https://track.grupojc.cc/track/34c58208-a263-4454-bbc4-6b736e47d42b/redirect',
+  whatsapp:
+    'https://www.estrelabet.bet.br/',
   terms: 'https://lp-comunidade-one.vercel.app/termos-de-uso.html',
   privacy:
     'https://lp-comunidade-one.vercel.app/politica-de-privacidade.html',
@@ -75,7 +75,7 @@ export default function Home() {
 
           <div className="cta-stack">
             <a
-              href={links.telegram}
+              href={links.whatsapp}
               className={cn(buttonVariants(), 'primary-cta')}
               aria-label="Entrar na comunidade"
             >

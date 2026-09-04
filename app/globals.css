@@ -304,11 +304,10 @@
   height: clamp(2.35rem, 8vw, 3rem);
   flex: 0 0 auto;
   place-items: center;
-  border: 2px solid #07140d;
-  border-radius: 0.65rem;
-  background: #25d366;
-  color: white;
-  box-shadow: 2px 2px 0 #07140d;
+  border: 0;
+  background: transparent;
+  color: #25d366;
+  box-shadow: none;
 }
 
 .cta-icon svg {

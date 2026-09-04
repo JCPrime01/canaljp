@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    'https://acesso-liberado-futebol.producaojcprime.chatgpt.site',
+    'https://comunidadejc-es.vercel.app',
   ),
   title: 'Acesso Liberado',
   description:

@@ -1,13 +1,65 @@
+import type { MouseEvent } from 'react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const links = {
-  whatsapp:
-    'https://www.estrelabet.bet.br/',
+declare global {
+  interface Window {
+    dispararLead?: () => string | undefined;
+    _lastLeadEventId?: string;
+  }
+}
+
+const CONTENT = {
+  label: 'Entrar na comunidade',
+  href: 'https://track.grupojc.cc/track/73cd9930-51c4-45aa-9abb-ace3f8942964/wa?next=https://ca.estrela.work/',
   terms: 'https://lp-comunidade-one.vercel.app/termos-de-uso.html',
-  privacy:
-    'https://lp-comunidade-one.vercel.app/politica-de-privacidade.html',
+  privacy: 'https://lp-comunidade-one.vercel.app/politica-de-privacidade.html',
 };
+
+const TRACK_HOST = 'track.grupojc.cc';
+const UTM_KEYS = [
+  'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+  'campaign', 'fbclid', 'gclid', 'cid', 'account_id', 'bot',
+];
+
+function mergeTrackingParams(href: string): URL {
+  const params = new URLSearchParams(window.location.search);
+  const url = new URL(href);
+  UTM_KEYS.forEach((k) => {
+    const v = params.get(k);
+    if (v) url.searchParams.set(k, v);
+  });
+  if (url.hostname === TRACK_HOST) {
+    const fbp = document.cookie.match(/(?:^|; )_fbp=([^;]+)/);
+    const fbc = document.cookie.match(/(?:^|; )_fbc=([^;]+)/);
+    if (fbp) url.searchParams.set('fbp', decodeURIComponent(fbp[1]));
+    if (fbc) {
+      url.searchParams.set('fbc', decodeURIComponent(fbc[1]));
+    } else if (params.get('fbclid')) {
+      url.searchParams.set('fbc', `fb.1.${Date.now()}.${params.get('fbclid')}`);
+    }
+  }
+  return url;
+}
+
+function handleCtaClick(e: MouseEvent<HTMLAnchorElement>) {
+  try {
+    const anchor = e.currentTarget;
+    const baseHref = anchor.getAttribute('data-href') || anchor.href;
+    const url = mergeTrackingParams(baseHref);
+    try {
+      if (typeof window.dispararLead === 'function') {
+        const eid = window.dispararLead();
+        if (eid && url.hostname === TRACK_HOST) url.searchParams.set('eid', eid);
+      }
+    } catch {
+      /* ignore */
+    }
+    anchor.href = url.toString();
+  } catch {
+    /* ignore */
+  }
+}
 
 function WhatsAppIcon() {
   return (
@@ -75,20 +127,25 @@ export default function Home() {
 
           <div className="cta-stack">
             <a
-              href={links.whatsapp}
+              href={CONTENT.href}
+              data-href={CONTENT.href}
+              data-trackpanel
+              target="_self"
+              rel="noopener"
+              onClick={handleCtaClick}
               className={cn(buttonVariants(), 'primary-cta')}
-              aria-label="Entrar na comunidade"
+              aria-label={CONTENT.label}
             >
               <span className="cta-icon" aria-hidden="true">
                 <WhatsAppIcon />
               </span>
-              <span>Entrar na comunidade</span>
+              <span>{CONTENT.label}</span>
             </a>
 
             <p className="legal-note">
               Ao clicar no botão você concorda com nossos{' '}
-              <a href={links.terms}>Termos</a> e{' '}
-              <a href={links.privacy}>Políticas</a>
+              <a href={CONTENT.terms}>Termos</a> e{' '}
+              <a href={CONTENT.privacy}>Políticas</a>
             </p>
 
           </div>
@@ -105,9 +162,9 @@ export default function Home() {
         </p>
         <p>Todos os direitos reservados © 2026</p>
         <nav aria-label="Links legais">
-          <a href={links.terms}>Termos de Uso</a>
+          <a href={CONTENT.terms}>Termos de Uso</a>
           <span aria-hidden="true">|</span>
-          <a href={links.privacy}>Política de Privacidade</a>
+          <a href={CONTENT.privacy}>Política de Privacidade</a>
         </nav>
       </footer>
     </main>

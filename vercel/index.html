@@ -37,8 +37,58 @@
     />
     <link rel="icon" href="/favicon-jc.svg" type="image/svg+xml" />
     <title>COMUNIDADE DO JOTA</title>
+
+    <link rel="preconnect" href="https://track.grupojc.cc" crossorigin />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+
+    <script src="https://track.grupojc.cc/track/73cd9930-51c4-45aa-9abb-ace3f8942964.js" async></script>
+
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '806613525559509');
+      fbq('track', 'PageView');
+
+      (function () {
+        var orig = window.fbq;
+        if (!orig) return;
+        var BLOCKED = '961619428689288';
+        if (Array.isArray(orig.queue)) {
+          orig.queue = orig.queue.filter(function (e) {
+            return !(e && e[0] === 'init' && e[1] === BLOCKED);
+          });
+        }
+        var wrapper = function () {
+          if (arguments[0] === 'init' && arguments[1] === BLOCKED) return;
+          return wrapper.callMethod
+            ? wrapper.callMethod.apply(wrapper, arguments)
+            : wrapper.queue.push(arguments);
+        };
+        wrapper.queue = orig.queue;
+        wrapper.loaded = orig.loaded;
+        wrapper.version = orig.version;
+        wrapper._fbq = orig._fbq;
+        wrapper.push = wrapper;
+        wrapper.callMethod = orig.callMethod;
+        window.fbq = wrapper;
+        if (window._fbq === orig) window._fbq = wrapper;
+      })();
+
+      function dispararLead() {
+        var eventId = 'Search' + Date.now();
+        var params = new URLSearchParams(window.location.search);
+        var utms = {};
+        ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','campaign','fbclid','gclid','cid','account_id','bot'].forEach(function (k) {
+          var v = params.get(k);
+          if (v) utms[k] = v;
+        });
+        try { fbq('track', 'Search', utms, { eventID: eventId }); } catch (e) {}
+        window._lastLeadEventId = eventId;
+        return eventId;
+      }
+    </script>
   </head>
   <body>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=806613525559509&ev=PageView&noscript=1" alt="" /></noscript>
     <div id="root"></div>
     <script type="module" src="/main.tsx"></script>
   </body>

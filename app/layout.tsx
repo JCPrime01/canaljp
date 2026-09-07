@@ -3,21 +3,21 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    'https://comunidadejc-es.vercel.app',
+    'https://canaljp.vercel.app',
   ),
-  title: 'COMUNIDADE DO JOTA',
+  title: 'CANAL DO JOTA',
   description:
-    'Entre na comunidade gratuita e receba análises de futebol todos os dias.',
+    'Entre no meu canal gratuito e receba análises de futebol todos os dias.',
   openGraph: {
-    title: 'COMUNIDADE DO JOTA',
+    title: 'CANAL DO JOTA',
     description:
-      'Entre na comunidade gratuita e receba análises de futebol todos os dias.',
+      'Entre no meu canal gratuito e receba análises de futebol todos os dias.',
     images: [
       {
-        url: '/og-comunidade-do-jota.png',
+        url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'COMUNIDADE DO JOTA — análises todos os dias',
+        alt: 'CANAL DO JOTA — análises todos os dias',
       },
     ],
     locale: 'pt_BR',
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'COMUNIDADE DO JOTA',
+    title: 'CANAL DO JOTA',
     description:
-      'Entre na comunidade gratuita e receba análises de futebol todos os dias.',
-    images: ['/og-comunidade-do-jota.png'],
+      'Entre no meu canal gratuito e receba análises de futebol todos os dias.',
+    images: ['/og.png'],
   },
   icons: {
     icon: '/favicon-jc.svg',

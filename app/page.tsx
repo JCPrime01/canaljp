@@ -11,7 +11,7 @@ declare global {
 
 const CONTENT = {
   label: 'Entrar no canal',
-  href: 'https://track.grupojc.cc/track/73cd9930-51c4-45aa-9abb-ace3f8942964/wa?next=https://ca.estrela.work/',
+  href: 'https://whatsapp.com/channel/0029Vb8moO04dTnFatuh2e2',
   terms: 'https://lp-comunidade-one.vercel.app/termos-de-uso.html',
   privacy: 'https://lp-comunidade-one.vercel.app/politica-de-privacidade.html',
 };

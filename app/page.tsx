@@ -11,7 +11,7 @@ declare global {
 
 const CONTENT = {
   label: 'Entrar no canal',
-  href: 'https://whatsapp.com/channel/0029Vb8moO04dTnFatuh2e2',
+  href: 'https://whatsapp.com/channel/0029Vb8moO04dTnFatuh2e2B',
   terms: 'https://lp-comunidade-one.vercel.app/termos-de-uso.html',
   privacy: 'https://lp-comunidade-one.vercel.app/politica-de-privacidade.html',
 };

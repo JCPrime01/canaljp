@@ -5,90 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Entre na comunidade gratuita e receba análises de futebol todos os dias."
+      content="Entre no meu canal gratuito e receba análises de futebol todos os dias."
     />
-    <meta property="og:title" content="COMUNIDADE DO JOTA" />
+    <meta property="og:title" content="CANAL DO JOTA" />
     <meta
       property="og:description"
-      content="Entre na comunidade gratuita e receba análises de futebol todos os dias."
+      content="Entre no meu canal gratuito e receba análises de futebol todos os dias."
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:url" content="https://comunidadejc-es.vercel.app/" />
+    <meta property="og:url" content="https://canaljp.vercel.app/" />
     <meta
       property="og:image"
-      content="https://comunidadejc-es.vercel.app/og-comunidade-do-jota.png"
+      content="https://canaljp.vercel.app/og.png"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="COMUNIDADE DO JOTA — análises todos os dias"
+      content="CANAL DO JOTA — análises todos os dias"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="COMUNIDADE DO JOTA" />
+    <meta name="twitter:title" content="CANAL DO JOTA" />
     <meta
       name="twitter:description"
-      content="Entre na comunidade gratuita e receba análises de futebol todos os dias."
+      content="Entre no meu canal gratuito e receba análises de futebol todos os dias."
     />
     <meta
       name="twitter:image"
-      content="https://comunidadejc-es.vercel.app/og-comunidade-do-jota.png"
+      content="https://canaljp.vercel.app/og.png"
     />
     <link rel="icon" href="/favicon-jc.svg" type="image/svg+xml" />
-    <title>COMUNIDADE DO JOTA</title>
+    <title>CANAL DO JOTA</title>
 
-    <link rel="preconnect" href="https://track.grupojc.cc" crossorigin />
     <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
-
-    <script src="https://track.grupojc.cc/track/73cd9930-51c4-45aa-9abb-ace3f8942964.js" async></script>
 
     <script>
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '806613525559509');
-      fbq('track', 'PageViewJC');
 
-      (function () {
-        var orig = window.fbq;
-        if (!orig) return;
-        var BLOCKED = '961619428689288';
-        if (Array.isArray(orig.queue)) {
-          orig.queue = orig.queue.filter(function (e) {
-            return !(e && e[0] === 'init' && e[1] === BLOCKED);
-          });
-        }
-        var wrapper = function () {
-          if (arguments[0] === 'init' && arguments[1] === BLOCKED) return;
-          return wrapper.callMethod
-            ? wrapper.callMethod.apply(wrapper, arguments)
-            : wrapper.queue.push(arguments);
-        };
-        wrapper.queue = orig.queue;
-        wrapper.loaded = orig.loaded;
-        wrapper.version = orig.version;
-        wrapper._fbq = orig._fbq;
-        wrapper.push = wrapper;
-        wrapper.callMethod = orig.callMethod;
-        window.fbq = wrapper;
-        if (window._fbq === orig) window._fbq = wrapper;
-      })();
+      function getExternalId() {
+        var key = '_fbxid';
+        try {
+          var stored = localStorage.getItem(key);
+          if (stored) return stored;
+          var newId = 'xid_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+          localStorage.setItem(key, newId);
+          return newId;
+        } catch (e) { return null; }
+      }
 
-      function dispararLead() {
-        var eventId = 'CliqueJC' + Date.now();
+      function getCountry() {
+        try {
+          var lang = navigator.language || '';
+          var parts = lang.split('-');
+          if (parts.length > 1) return parts[1].toUpperCase();
+          return null;
+        } catch (e) { return null; }
+      }
+
+      function getUtms() {
         var params = new URLSearchParams(window.location.search);
         var utms = {};
         ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','campaign','fbclid','gclid','cid','account_id','bot'].forEach(function (k) {
           var v = params.get(k);
           if (v) utms[k] = v;
         });
-        try { fbq('track', 'CliqueJC', utms, { eventID: eventId }); } catch (e) {}
+        return utms;
+      }
+
+      var advancedMatching = {};
+      var extId = getExternalId();
+      var country = getCountry();
+      if (extId) advancedMatching.external_id = extId;
+      if (country) advancedMatching.country = country;
+
+      fbq('init', '961619428689288', advancedMatching);
+
+      var pvEventId = 'PageView' + Date.now();
+      fbq('track', 'PageView', getUtms(), { eventID: pvEventId });
+      window._lastPageViewEventId = pvEventId;
+
+      function dispararLead() {
+        var eventId = 'SearchWhats' + Date.now();
+        try { fbq('track', 'SearchWhats', getUtms(), { eventID: eventId }); } catch (e) {}
         window._lastLeadEventId = eventId;
         return eventId;
       }
     </script>
   </head>
   <body>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=806613525559509&ev=PageViewJC&noscript=1" alt="" /></noscript>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=961619428689288&ev=PageView&noscript=1" alt="" /></noscript>
     <div id="root"></div>
     <script type="module" src="/main.tsx"></script>
   </body>

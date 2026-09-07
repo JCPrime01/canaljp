@@ -128,8 +128,10 @@ export default function Home() {
           <div className="cta-stack">
             <a
               href={CONTENT.href}
-              target="_blank"
+              data-href={CONTENT.href}
+              target="_self"
               rel="noopener noreferrer"
+              onClick={handleCtaClick}
               className={cn(buttonVariants(), 'primary-cta')}
               aria-label={CONTENT.label}
             >

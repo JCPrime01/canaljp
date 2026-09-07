@@ -10,7 +10,7 @@ declare global {
 }
 
 const CONTENT = {
-  label: 'Entrar na comunidade',
+  label: 'Entrar no canal',
   href: 'https://track.grupojc.cc/track/73cd9930-51c4-45aa-9abb-ace3f8942964/wa?next=https://ca.estrela.work/',
   terms: 'https://lp-comunidade-one.vercel.app/termos-de-uso.html',
   privacy: 'https://lp-comunidade-one.vercel.app/politica-de-privacidade.html',
@@ -121,7 +121,7 @@ export default function Home() {
 
         <div className="details-stack">
           <p className="hero-subtitle">
-            Entre na minha <strong>comunidade gratuita</strong> onde libero minhas
+            Entre no meu <strong>canal gratuito</strong> onde libero minhas
             análise todos os dias.
           </p>
 
@@ -155,8 +155,8 @@ export default function Home() {
       <footer className="site-footer">
         <img
           className="selo-legal-footer"
-          src="/selo-legal-footer.png"
-          alt="Ministério da Fazenda adverte: Aposta não é investimento. Jogue com responsabilidade. Autorização SPA/MF nº 320/2025"
+          src="/selo-esportiva.png"
+          alt="Ministério da Fazenda adverte: Aposta não é investimento. Autorizado pela Portaria SPA/MF N-2.104-27"
           width="900"
           height="200"
         />
